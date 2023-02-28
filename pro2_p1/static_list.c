@@ -36,7 +36,7 @@ tPosL previous(tPosL p , tList L){
 
 tPosL next(tPosL p , tList L){
     if(p==L.lastPos) return LNULL;
-    return p++;
+    return ++p;
 }
 
 tItemL getItem (tPosL p ,tList L){
@@ -89,16 +89,31 @@ bool insertItem (tItemL d, tPosL p, tList *L){
     }
 }
 
-tPosL findItem(tParticipantName d, tList L) {
+tPosL findItem(tParticipantName d, tList L){
     tPosL i;
-    if (L.lastPos == LNULL) {
+    if (isEmptyList(L)) {
         return LNULL;
-    }
-    for (i = 0; i < L.lastPos &&  strcmp(L.data[i].participantName, d) != 0; i++) {
-        if (strcmp(L.data[i].participantName, d) == 0) {
+    }else{
+        for (i = 0; (i < L.lastPos) && ( strcmp(L.data[i].participantName, d) != 0); i++);
+        if (strcmp(L.data[i].participantName, d) == 0){
             return i;
-        }
-
+        }else
+            return LNULL;
     }
-    return LNULL;
 }
+
+/*
+tPosL findItem(tItemL d, tList L) {
+    tPosL p;
+
+    if (isEmptyList(L)) {
+        return LNULL;
+    } else {
+        for (p = 0; (p < L.lastPos) && (L.data[p] != d); p++);
+        if (L.data[p] == d) {
+            return p;
+        } else
+            return LNULL;
+    }
+}
+ */

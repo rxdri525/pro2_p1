@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/adria/CLionProjects/pro2_p1/static_list.c
+static_list.h
+C:/Users/adria/CLionProjects/pro2_p1/static_list.h
+string.h
+-
+
+C:/Users/adria/CLionProjects/pro2_p1/static_list.h
+types.h
+C:/Users/adria/CLionProjects/pro2_p1/types.h
+
+C:/Users/adria/CLionProjects/pro2_p1/types.h
+stdbool.h
+-
+
